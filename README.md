@@ -26,9 +26,15 @@ The project expects files to be organised:
 
 At the moment the following convention is used for gauges:
 
-    'g' + box-size + 'optional colour hint'
+>   'g' + box-size + 'optional colour hint'
 
 For a 100x100 gauge this would be 'g100.jpg'.  If you supply your own background you might use 'g100myvariant.jpg'.
+
+### Creating JPGs
+
+I've found the best way to create the required small clean JPGs is to start with an SVG file and then use ImageMagick to convert it into a JPG.  The following syntax has worked for me:
+
+convert g240plain-01.svg -type TrueColor g240plain.jpg
 
 ## gauge_class
 
@@ -36,7 +42,7 @@ This will create a gauge with a 270 degree sweep, a legend for units and display
 
 It's initilised thus:
 
-g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
+> g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
 
 - display - a reference to the ST7789 display, 
 - xpos - the top left X position, 
