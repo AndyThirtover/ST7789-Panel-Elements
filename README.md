@@ -3,6 +3,11 @@
 For this project I wanted to create a range of useful panel elements that could be displayed on 
 the cheap and common ST7789 TFT/LCD/OLED displays that one finds on eBay etc.
 
+![Running on TTGO](doc_img/ESP32-Example.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andythirtover/ST7789-Panel-Elements/master/doc_img/ESP32-Example.png" alt="Running on ESP32 TTGO"/>
+</p>
+
 I generally drive them from ESP and ESP-S2 processors.
 
 In particular I wanted a flexible set of gauges, meters, counters and LED representations that I could use on any screen size.
