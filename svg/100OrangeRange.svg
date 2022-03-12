@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFCD05;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#00DD00;stroke-width:8;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:#00DD00;}
+	.st3{fill:#BB0000;}
+	.st4{fill:#FF3300;}
+</style>
+<g id="Gauge">
+	<g id="ARC">
+		<path class="st0" d="M78.8,78.8c15.9-15.9,15.9-41.7,0-57.7s-41.7-15.9-57.7,0s-15.9,41.7,0,57.7"/>
+	</g>
+</g>
+<g id="Range">
+	<g id="ARC_00000065788523920329147230000007210240998941755807_">
+		<g>
+			<path class="st1" d="M21.1,78.8"/>
+		</g>
+		<g>
+			<path class="st2" d="M18.9,30.2l-6.7-4.3c1.8-2.7,3.8-5.3,6.2-7.6C26.8,9.8,38,5.2,50,5.1c0,0,0,0,0.1,0c12,0,23.2,4.7,31.6,13.1
+				c1.8,1.8,3.4,3.8,4.9,5.8L80,28.7c-1.2-1.7-2.6-3.3-4-4.8C69.1,17,59.8,13.1,50,13.1c0,0,0,0,0,0c-9.8,0-19.1,3.8-26.1,10.8
+				C22,25.8,20.3,27.9,18.9,30.2z"/>
+		</g>
+		<g>
+			<path class="st2" d="M90.7,50c0-8.3-2.5-16.6-7.5-23.6"/>
+			<path class="st3" d="M94.7,50l-8,0c0-7.7-2.3-15.1-6.7-21.3l6.5-4.6C91.9,31.7,94.7,40.7,94.7,50z"/>
+		</g>
+		<g>
+			<path class="st4" d="M81.6,81.6L76,76C82.9,69,86.7,59.8,86.7,50l8,0C94.7,62,90.1,73.2,81.6,81.6z"/>
+		</g>
+	</g>
+</g>
+</svg>

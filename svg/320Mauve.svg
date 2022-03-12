@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 240" style="enable-background:new 0 0 320 240;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#EE2A7B;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{display:none;}
+	.st2{display:inline;fill:none;stroke:#EE2A7B;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	
+		.st3{display:inline;fill:none;stroke:#EE2A7B;stroke-width:0.9286;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="Layer_1">
+	<g id="ARC">
+		<path class="st0" d="M227.8,187.5c37.4-37.4,37.4-98.1,0-135.6s-98.1-37.4-135.6,0s-37.4,98.1,0,135.6"/>
+	</g>
+</g>
+<g id="Grid" class="st1">
+	<line class="st2" x1="-63.6" y1="120" x2="383.6" y2="120"/>
+	<circle class="st3" cx="160" cy="120" r="107"/>
+</g>
+</svg>
