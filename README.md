@@ -44,6 +44,10 @@ It's initilised thus:
 
 > g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
 
+and updated:
+
+> g1.update(value)
+
 - display - a reference to the ST7789 display, 
 - xpos - the top left X position, 
 - ypos - the top left Y position, 
@@ -55,5 +59,5 @@ It's initilised thus:
 - bg=st7789.WHITE - gauge background colour, 
 - fg=st7789.BLACK - colour for gauge foregound elements
 
-
+At the moment, fonts are selected based on the box size, see the code for logic.
 
