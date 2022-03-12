@@ -42,11 +42,11 @@ This will create a gauge with a 270 degree sweep, a legend for units and display
 
 It's initilised thus:
 
-> g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
+    > g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
 
 and updated:
 
-> g1.update(value)
+    > g1.update(value)
 
 - display - a reference to the ST7789 display, 
 - xpos - the top left X position, 
