@@ -61,3 +61,22 @@ and updated:
 
 At the moment, fonts are selected based on the box size, see the code for logic.
 
+## Meter
+
+    import lib.meter as meter
+
+    init: m1 = meter.Meter(tft,110,4,100,30,legend='kWhr')
+    update: m1.update(value)
+
+- display - a reference to the ST7789 display, 
+- xpos - the top left X position, 
+- ypos - the top left Y position, 
+- xbox - width of meter 100 implemented currently
+- ybox - depth of meter 30 implemented currently
+- legend - legened for lower bar
+- bg=st7789.WHITE - meter background colour, 
+- lc=st7789.BLACK - colour for meter value display
+- fg=st7789.BLACK - colour for meter legend elements
+
+Currently fonts are fixed - see code
+
