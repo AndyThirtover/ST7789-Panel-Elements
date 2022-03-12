@@ -1,5 +1,5 @@
 """"
-Gauge test -- just to see ...
+Gauge test -- Expects class elements in lib subfolder
 """
 
 import utime
@@ -8,9 +8,9 @@ from random import randint
 import st7789
 import tft_config
 import vga1_bold_16x16 as fontl
-import gauge_class
-import gauge_circle
-import ScreenLED
+import lib.gauge_class as gauge_class
+import lib.gauge_circle as gauge_circle
+import lib.ScreenLED as ScreenLED
 
 tft = tft_config.config(1)
 

@@ -39,7 +39,7 @@ class gauge:
             self.font = fontxl
         else:
             self.font = fonts
-        bg = "g{}{}.jpg".format(box,color_hint)
+        bg = "../jpg/g{}{}.jpg".format(box,color_hint)
         display.jpg(bg,xpos,ypos,st7789.SLOW)
         pointer_len = int(box * 0.60 / 2)
         self.pointer_poly = self.hand_polygon(pointer_len, 1)

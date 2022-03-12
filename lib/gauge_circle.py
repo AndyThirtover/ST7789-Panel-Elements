@@ -2,6 +2,8 @@
 Gauge Circle
 
    A gauge that can be placed anywhere on a TFT screen, uses a circle as a pointer
+
+   Expects to find background JPGs in /jpg
 """
 
 import math
@@ -23,7 +25,7 @@ class gauge:
         self.fg = fg
         self.bg = bg
         self.hub = 4 # this is the pointer diameter
-        bg = "g{}{}.jpg".format(box,color_hint)
+        bg = "../jpg/g{}{}.jpg".format(box,color_hint)
         display.jpg(bg,xpos,ypos,st7789.SLOW)
         self.show_units(units)
 
