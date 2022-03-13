@@ -46,7 +46,7 @@ def main():
     #g2 = gauge_circle.gauge(tft,110,0,100,'b',units='mJ',bg=st7789.WHITE,fg=st7789.BLUE)
 
     m1 = meter.Meter(tft,110,4,100,30,legend='kWhr')
-    m2 = meter.Meter(tft,110,36,100,30,legend='Jobs')
+    m2 = meter.Meter(tft,110,36,100,30,legend='Jobs', bezel='../jpg/MeterBezelAlt2.jpg')
     m3 = meter.Meter(tft,110,70,100,30,legend='Doings')
     l1 = ScreenLED.LED(tft,200,90,30, legend='Test')
 

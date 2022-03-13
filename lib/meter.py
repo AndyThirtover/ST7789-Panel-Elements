@@ -13,7 +13,7 @@ import vga1_bold_16x32 as fontxl
 
 class Meter:
 
-    def __init__(self, display, xpos, ypos, xbox, ybox, legend="Legend", max=1000, bg=st7789.WHITE, lc=st7789.RED, fg=st7789.BLACK):
+    def __init__(self, display, xpos, ypos, xbox, ybox, legend="Legend", bezel="../jpg/MeterBezel.jpg", max=1000, bg=st7789.WHITE, lc=st7789.RED, fg=st7789.BLACK):
         print("Screen Meter Init at {},{}".format(xpos,ypos))
         self.value = None
         self.prev_value = None
@@ -39,8 +39,7 @@ class Meter:
             self.font = fontxl
         else:
             self.font = fonts
-        bg =  '../jpg/MeterBezel.jpg'             #  calculation hint "../jpg/g{}{}.jpg".format(box,color_hint)
-        display.jpg(bg,xpos,ypos,st7789.SLOW)
+        display.jpg(bezel,xpos,ypos,st7789.SLOW)
 
         self.show_legend(legend)
 

@@ -5,7 +5,7 @@ the cheap and common ST7789 TFT/LCD/OLED displays that one finds on eBay etc.
 
 ![Running on TTGO](doc_img/ESP32-Example.png)
 
-I generally drive them from ESP and ESP-S2 processors.
+I generally drive them from ESP and ESP-S2 processors, the example above is from the TTGO.
 
 In particular I wanted a flexible set of gauges, meters, counters and LED representations that I could use on any screen size.
 
@@ -21,6 +21,8 @@ The project expects files to be organised:
 
     /lib - python class files
     /jpg - jpgs used in backgrounds
+
+Files in these directories are the only ones needed to be uploaded to a processor running the Russ Hughes firmware, or having the ST7789 driver installed.
 
 ## JPG naming and creation
 
@@ -75,6 +77,7 @@ At the moment, fonts are selected based on the box size, see the code for logic.
 - xbox - width of meter 100 implemented currently
 - ybox - depth of meter 30 implemented currently
 - legend - legend for lower bar
+- bezel - specify an alternate bezel e.g '../jpg/MeterBezelAlt2.jpg'  The dimensions should match xbox/ybox
 - max=1000 - maximum value to be displayed before #### shown
 - bg=st7789.WHITE - meter background colour, 
 - lc=st7789.BLACK - colour for meter value display
