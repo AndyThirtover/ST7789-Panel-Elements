@@ -42,11 +42,12 @@ This will create a gauge with a 270 degree sweep, a legend for units and display
 
 It's initilised thus:
 
-    > g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
+    import lib.gauge_class as gauge_class
+    g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
 
 and updated:
 
-    > g1.update(value)
+    g1.update(value)
 
 - display - a reference to the ST7789 display, 
 - xpos - the top left X position, 
@@ -73,7 +74,7 @@ At the moment, fonts are selected based on the box size, see the code for logic.
 - ypos - the top left Y position, 
 - xbox - width of meter 100 implemented currently
 - ybox - depth of meter 30 implemented currently
-- legend - legened for lower bar
+- legend - legend for lower bar
 - max=1000 - maximum value to be displayed before #### shown
 - bg=st7789.WHITE - meter background colour, 
 - lc=st7789.BLACK - colour for meter value display
@@ -81,3 +82,24 @@ At the moment, fonts are selected based on the box size, see the code for logic.
 
 Currently fonts are fixed - see code
 
+## Screen LED
+
+This will create an 'LED' on the display.
+
+Init:
+
+    import lib.ScreenLED as ScreenLED
+    l1 = ScreenLED.LED(tft,200,90,30, legend='Test')
+
+Update:
+
+    l1.update(<state>)
+
+- display - a reference to the ST7789 display, 
+- xpos - the top left X position, 
+- ypos - the top left Y position, 
+- diameter - diameter of LED in pixels
+- legend - legend for lower bar
+- bg=st7789.WHITE - LED background colour, 
+- lc=st7789.RED - colour for True state of the LED
+- fg=st7789.BLACK - colour for LED legend and bezel elements
