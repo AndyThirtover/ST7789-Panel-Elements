@@ -5,6 +5,7 @@ Gauge test -- Expects class elements in lib subfolder
 import utime
 import math
 from random import randint
+from random import random
 import st7789
 import tft_config
 import vga1_bold_16x16 as fontl
@@ -52,7 +53,7 @@ def main():
     g1.update(randint(20,100))
     utime.sleep_ms(100)
     #g2.update(randint(30,100))
-    m1.update(randint(30,100))
+    m1.update(random()*1500)
     m2.update(randint(30,100))
     m3.update(randint(30,100))
     utime.sleep_ms(100)
@@ -61,7 +62,7 @@ def main():
     while True:
 
         v1 = randint(0,100)
-        v2 = randint(0,100)
+        v2 = random()*1100
         v3 = randint(0,100)
         v4 = randint(0,100)
         s1 = randint(0,1)

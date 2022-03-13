@@ -8,12 +8,12 @@ import utime
 import math
 import st7789
 import vga1_8x8 as fonts
-import vga1_bold_16x16 as fontl
+import vga1_8x16 as fontl
 import vga1_bold_16x32 as fontxl
 
 class Meter:
 
-    def __init__(self, display, xpos, ypos, xbox, ybox, legend="Legend", bg=st7789.WHITE, lc=st7789.RED, fg=st7789.BLACK):
+    def __init__(self, display, xpos, ypos, xbox, ybox, legend="Legend", max=1000, bg=st7789.WHITE, lc=st7789.RED, fg=st7789.BLACK):
         print("Screen Meter Init at {},{}".format(xpos,ypos))
         self.value = None
         self.prev_value = None
@@ -22,6 +22,7 @@ class Meter:
         self.ypos = ypos
         self.xbox = xbox
         self.ybox = ybox
+        self.max = max
         self.fg = fg
         self.lc = lc
         self.bg = bg
@@ -29,7 +30,7 @@ class Meter:
         self.center_y = int(ybox/2)+ypos
         self.center_x = int(xbox/2)+xpos
         self.center_y = int(ybox/2)+ypos
-        self.center_legend_y_offset = int(0.7 * ybox)
+        self.center_legend_y_offset = int(0.75 * ybox)
         self.center_value_y_offset = int(0.1 * ybox)
         self.font_value = fontl
         if xbox > 200:
@@ -70,5 +71,12 @@ class Meter:
         if value == self.prev_value:
             return
         self.value = value # so that we can be queried about our current value
-        self.show_value(" {} ".format(value))
+        if value > self.max:
+            self.show_value(" #### ")
+        else:
+            if isinstance(value, int):
+                self.show_value(" {} ".format(value))
+            else:
+                self.show_value(" {:.1f} ".format(value))
         self.prev_value = value # for next time round
+
