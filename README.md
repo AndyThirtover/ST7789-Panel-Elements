@@ -74,6 +74,7 @@ At the moment, fonts are selected based on the box size, see the code for logic.
 - xbox - width of meter 100 implemented currently
 - ybox - depth of meter 30 implemented currently
 - legend - legened for lower bar
+- max=1000 - maximum value to be displayed before #### shown
 - bg=st7789.WHITE - meter background colour, 
 - lc=st7789.BLACK - colour for meter value display
 - fg=st7789.BLACK - colour for meter legend elements
