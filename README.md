@@ -32,7 +32,9 @@ At the moment the following convention is used for gauges:
 
 For a 100x100 gauge this would be 'g100.BMP'.  If you supply your own background you might use 'g100myvariant.BMP'.
 
-![Example Bezel](BMP/g100plainGrad.BMP)
+![Example Bezel 100](BMP/g100plainGrad.BMP)
+![Example Bezel 240](BMP/g240.BMP)
+
 
 ### Creating BMP and associated bitmap files
 
