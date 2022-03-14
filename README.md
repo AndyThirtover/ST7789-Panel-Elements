@@ -20,23 +20,23 @@ In particular I wanted a flexible set of gauges, meters, counters and LED repres
 The project expects files to be organised:
 
     /lib - python class files
-    /jpg - jpgs used in backgrounds
+    /bitmap - bitmap.py files used for bezels etc.
 
 Files in these directories are the only ones needed to be uploaded to a processor running the Russ Hughes firmware, or having the ST7789 driver installed.
 
-## JPG naming and creation
+## BMP naming and creation
 
 At the moment the following convention is used for gauges:
 
->   'g' + box-size + 'optional colour hint'
+    'g' + box-size + 'optional colour hint'
 
-For a 100x100 gauge this would be 'g100.jpg'.  If you supply your own background you might use 'g100myvariant.jpg'.
+For a 100x100 gauge this would be 'g100.BMP'.  If you supply your own background you might use 'g100myvariant.BMP'.
 
-### Creating JPGs
+### Creating BMP and associated bitmap files
 
-I've found the best way to create the required small clean JPGs is to start with an SVG file and then use ImageMagick to convert it into a JPG.  The following syntax has worked for me:
+I've found the best way to create the required small clean bitmap .py files is to start with an SVG/AI file and then export it as a BMP.  The following syntax has worked for me:
 
-convert g240plain-01.svg -type TrueColor g240plain.jpg
+    python3 ../../st7789_mpy/utils/imgtobitmap.py g100plain.BMP 2 > ../bitmap/g100plain.py
 
 ## gauge_class
 
@@ -45,7 +45,7 @@ This will create a gauge with a 270 degree sweep, a legend for units and display
 It's initilised thus:
 
     import lib.gauge_class as gauge_class
-    g1 = gauge_class.gauge(tft,4,0,100,'orange',units='Flux')
+    g1 = gauge_class.gauge(tft,4,0,100,bezel='bitmap.g100orange',units='Flux')
 
 and updated:
 
@@ -55,7 +55,7 @@ and updated:
 - xpos - the top left X position, 
 - ypos - the top left Y position, 
 - box - the size of the bounding box, typically 100 or 240 at the moment - see the jpg directory for supplied background sizes, 
-- color_hint - an addition parameter to select a particular background 'orange' with a box size of 100 would select 'g100orange.jpg', 
+- bezel - the name of the bitmap.py file in the bitmap directory in the form 'bitmap.<your file> but without the .py, 
 - units="Units" - the units legent, 
 - low=0 - the lowest value expected for the gauge, 
 - high=100, - the highest value expected for the gauge,

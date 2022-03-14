@@ -2,6 +2,8 @@
 Meter
 
    A Meter that can be placed anywhere on a TFT screen
+
+   note:  b = __import__('MeterBezelAlt2')   <-- this works
 """
 
 import utime

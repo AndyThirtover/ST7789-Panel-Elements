@@ -10,11 +10,11 @@ import st7789
 import vga1_8x16 as fonts
 import vga1_bold_16x16 as fontl
 import vga1_bold_16x32 as fontxl
-
+from lib.panel_helpers import chunked_bitmap
 
 class gauge:
 
-    def __init__(self, display, xpos, ypos, box, color_hint, units="Units", low=0, high=100, bg=st7789.WHITE, fg=st7789.BLACK):
+    def __init__(self, display, xpos, ypos, box, bezel="bitmap.g135plain", units="Units", low=0, high=100, bg=st7789.WHITE, fg=st7789.BLACK):
         print("Gauge Init")
         self.value = None
         self.low = low
@@ -39,8 +39,11 @@ class gauge:
             self.font = fontxl
         else:
             self.font = fonts
-        bg = "../jpg/g{}{}.jpg".format(box,color_hint)
-        display.jpg(bg,xpos,ypos,st7789.SLOW)
+        # Display Bezel
+        bm = __import__(bezel)  # import the bitmap .py file
+        ref = dir(bm)[3]        # reference to the object in the .py file
+        chunked_bitmap(display,getattr(bm,ref),xpos,ypos)
+
         pointer_len = int(box * 0.60 / 2)
         self.pointer_poly = self.hand_polygon(pointer_len, 1)
         display.bounding(True)
