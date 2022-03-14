@@ -42,7 +42,7 @@ def main():
 
     utime.sleep_ms(1000)
 
-    g1 = gauge_class.gauge(tft,4,0,100,bezel='bitmap.g100plain',units='Flux')
+    g1 = gauge_class.gauge(tft,4,0,100,bezel='bitmap.g100plainGrad',units='Flux')
     #g2 = gauge_circle.gauge(tft,110,0,100,'b',units='mJ',bg=st7789.WHITE,fg=st7789.BLUE)
 
     m1 = meter.Meter(tft,110,4,100,30,legend='kWhr')

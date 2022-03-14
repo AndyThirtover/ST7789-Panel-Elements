@@ -32,6 +32,8 @@ At the moment the following convention is used for gauges:
 
 For a 100x100 gauge this would be 'g100.BMP'.  If you supply your own background you might use 'g100myvariant.BMP'.
 
+![Example Bezel](BMP/g100plainGrad.BMP)
+
 ### Creating BMP and associated bitmap files
 
 I've found the best way to create the required small clean bitmap .py files is to start with an SVG/AI file and then export it as a BMP.  The following syntax has worked for me:
