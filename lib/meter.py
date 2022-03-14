@@ -12,10 +12,11 @@ import st7789
 import vga1_8x8 as fonts
 import vga1_8x16 as fontl
 import vga1_bold_16x32 as fontxl
+from lib.panel_helpers import chunked_bitmap
 
 class Meter:
 
-    def __init__(self, display, xpos, ypos, xbox, ybox, legend="Legend", bezel="../jpg/MeterBezel.jpg", max=1000, bg=st7789.WHITE, lc=st7789.RED, fg=st7789.BLACK):
+    def __init__(self, display, xpos, ypos, xbox, ybox, legend="Legend", bezel="bitmap.MeterBezel", max=1000, bg=st7789.WHITE, lc=st7789.RED, fg=st7789.BLACK):
         print("Screen Meter Init at {},{}".format(xpos,ypos))
         self.value = None
         self.prev_value = None
@@ -41,7 +42,11 @@ class Meter:
             self.font = fontxl
         else:
             self.font = fonts
-        display.jpg(bezel,xpos,ypos,st7789.SLOW)
+        # display Bezel
+        meterBez = __import__(bezel)  # import the bitmap .py file - careful with this!
+        ref = bezel.strip('bitmap.')  # reference to the object in the .py file
+        print("Ref: {} from {}".format(ref,bezel))
+        chunked_bitmap(display,getattr(meterBez,ref),xpos,ypos)
 
         self.show_legend(legend)
 

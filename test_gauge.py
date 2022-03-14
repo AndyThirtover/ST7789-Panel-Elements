@@ -42,11 +42,11 @@ def main():
 
     utime.sleep_ms(1000)
 
-    g1 = gauge_class.gauge(tft,4,0,100,bezel='bitmap.g100plainGrad',units='Flux')
+    g1 = gauge_class.gauge(tft,4,0,100,bezel='bitmap.g100points5redline',units='Flux')
     #g2 = gauge_circle.gauge(tft,110,0,100,'b',units='mJ',bg=st7789.WHITE,fg=st7789.BLUE)
 
     m1 = meter.Meter(tft,110,4,100,30,legend='kWhr')
-    m2 = meter.Meter(tft,110,36,100,30,legend='Jobs', bezel='../jpg/MeterBezelAlt2.jpg')
+    m2 = meter.Meter(tft,110,36,100,30,legend='Jobs', bezel='bitmap.MeterBezelAlt2')
     m3 = meter.Meter(tft,110,70,100,30,legend='Doings')
     l1 = ScreenLED.LED(tft,200,90,30, legend='Test')
 

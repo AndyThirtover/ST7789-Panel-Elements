@@ -40,9 +40,11 @@ class gauge:
         else:
             self.font = fonts
         # Display Bezel
-        bm = __import__(bezel)  # import the bitmap .py file
-        ref = dir(bm)[3]        # reference to the object in the .py file
+        bm = __import__(bezel)          # import the bitmap .py file
+        ref = bezel.strip('bitmap.')    # reference to the object in the .py file
         chunked_bitmap(display,getattr(bm,ref),xpos,ypos)
+        del bm
+        del ref
 
         pointer_len = int(box * 0.60 / 2)
         self.pointer_poly = self.hand_polygon(pointer_len, 1)
