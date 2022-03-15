@@ -110,3 +110,13 @@ Update:
 - bg=st7789.WHITE - LED background colour, 
 - lc=st7789.RED - colour for True state of the LED
 - fg=st7789.BLACK - colour for LED legend and bezel elements
+
+
+## Note about the Wemos D1 R32
+
+In testing it was found that this variant of the ESP32  would run out of memory at the import bezel phase.  This is more noticeable with the 240px square bezels with all the bells and whistles (digits and gradients).   A solution is to reduce the bit depth and thuse create less data in the bitmap.py files
+
+    python3 ../../st7789_mpy/utils/imgtobitmap.py g240gradient.BMP 6 > ../bitmap/g240gradient.py
+    python3 ../../st7789_mpy/utils/imgtobitmap.py g240gradient.BMP 3 > ../bitmap/g240gradient.py
+
+This of course means that gradients do not display as smooth.
