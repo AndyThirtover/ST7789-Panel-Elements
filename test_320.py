@@ -41,7 +41,7 @@ def main():
     m1 = meter.Meter(tft,230,4,80,30,legend='kWhr', bezel='bitmap.MeterBezelSimple')
     m2 = meter.Meter(tft,230,40,80,30,legend='Jobs', bezel='bitmap.MeterBezelSimple')
     m3 = meter.Meter(tft,230,200,80,30,legend='Doings', bezel='bitmap.MeterBezelSimple',lc=st7789.GREEN, fg=st7789.BLUE)
-    l1 = ScreenLED.LED(tft,260,80,30, legend='Test')
+    l1 = ScreenLED.LED(tft,260,80,30, legend='Test', lc=st7789.GREEN)
     l2 = ScreenLED.LED(tft,260,110,30, legend='Alarm')
     l3 = ScreenLED.LED(tft,260,140,30, legend='Russes', lc=st7789.BLUE)
 
