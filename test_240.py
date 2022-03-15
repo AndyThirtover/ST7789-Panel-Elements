@@ -35,7 +35,7 @@ def main():
     tft.fill(st7789.WHITE)
     tft.text(fontl,"Test Gauges",10,112,st7789.BLACK,st7789.WHITE)
 
-    g1 = gauge_class.gauge(tft,0,0,240,bezel='bitmap.g240plainRedline',units='Flux')
+    g1 = gauge_class.gauge(tft,0,0,240,bezel='bitmap.g240redline4bit',units='Flux')
 
     """
     m1 = meter.Meter(tft,230,4,80,30,legend='kWhr', bezel='bitmap.MeterBezelSimple')
