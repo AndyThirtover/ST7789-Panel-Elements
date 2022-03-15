@@ -40,8 +40,8 @@ class gauge:
         else:
             self.font = fonts
         # Display Bezel
-        bm = __import__(bezel)          # import the bitmap .py file
-        ref = bezel.strip('bitmap.')    # reference to the object in the .py file
+        bm = __import__(bezel)              # import the bitmap .py file
+        ref = bezel.replace('bitmap.','')   # reference to the object in the .py file, replace is a better option
         chunked_bitmap(display,getattr(bm,ref),xpos,ypos)
         del bm
         del ref

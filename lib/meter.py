@@ -44,7 +44,7 @@ class Meter:
             self.font = fonts
         # display Bezel
         meterBez = __import__(bezel)  # import the bitmap .py file - careful with this!
-        ref = bezel.strip('bitmap.')  # reference to the object in the .py file
+        ref = bezel.replace('bitmap.','')  # reference to the object in the .py file
         print("Ref: {} from {}".format(ref,bezel))
         chunked_bitmap(display,getattr(meterBez,ref),xpos,ypos)
 
