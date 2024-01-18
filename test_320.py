@@ -10,11 +10,12 @@ from random import randint
 from random import random
 import st7789
 import tft_config
-import vga1_bold_16x16 as fontl
-import lib.gauge_class as gauge_class
-import lib.gauge_circle as gauge_circle
-import lib.ScreenLED as ScreenLED
-import lib.meter as meter
+import lib.simple_gauge as gauge_class
+#import lib.gauge_circle as gauge_circle
+#import lib.meter as meter
+from lib.panel_helpers import chunked_bitmap
+import gc
+
 
 tft = tft_config.config(1)
 
@@ -28,51 +29,36 @@ def move_to (curr, prev):
 
 def main():
     '''
-    Draw 4 gauges and update them
+    Draw 1 gauges and update it
     '''
     # enable display
     tft.init()
-    tft.inversion_mode(True)
-    tft.fill(st7789.WHITE)
-    tft.text(fontl,"Test Gauges",10,112,st7789.BLACK,st7789.WHITE)
+    tft.rotation(0)
+    tft.inversion_mode(False)
+    tft.fill(st7789.BLACK)
 
-    g1 = gauge_class.gauge(tft,0,0,240,bezel='bitmap.g240plainRedline',units='Flux')
-
-    m1 = meter.Meter(tft,230,4,80,30,legend='kWhr', bezel='bitmap.MeterBezelSimple')
-    m2 = meter.Meter(tft,230,40,80,30,legend='Jobs', bezel='bitmap.MeterBezelSimple')
-    m3 = meter.Meter(tft,230,200,80,30,legend='Doings', bezel='bitmap.MeterBezelSimple',lc=st7789.GREEN, fg=st7789.BLUE)
-    l1 = ScreenLED.LED(tft,260,80,30, legend='Test', lc=st7789.GREEN)
-    l2 = ScreenLED.LED(tft,260,110,30, legend='Alarm')
-    l3 = ScreenLED.LED(tft,260,140,30, legend='Russes', lc=st7789.BLUE)
-
+    g1 = gauge_class.gauge(tft,0,0,240,bezel='bitmap.240Bar')
+    gc.collect()
     g1.update(randint(20,100))
+
+    autostate = 'bitmap.AutoState'
+    bm = __import__(autostate)              # import the bitmap .py file
+    ref = autostate.replace('bitmap.','')   # reference to the object in the .py file, replace is a better option
+    chunked_bitmap(tft, getattr(bm,ref),0,240)
+    del bm
+    del ref
+    gc.collect()
+
     utime.sleep_ms(100)
-    m1.update(random()*1500)
-    m2.update(randint(30,100))
-    m3.update(randint(30,100))
-    utime.sleep_ms(100)
-    l1.update(randint(0,1))
-    l2.update(randint(0,1))
-    l3.update(randint(0,1))
 
     while True:
-
         v1 = randint(0,100)
-        v2 = random()*1100
-        v3 = randint(0,100)
-        v4 = randint(0,100)
-        s1 = randint(0,1)
-        s2 = randint(0,1)
-        s3 = randint(0,1)
+        v2 = int(gc.mem_free()/1024)
 
         for i in range(20):
+            gc.collect()
             g1.update(move_to(v1,g1.value))
-            m1.update(move_to(v2,m1.value))
-            m2.update(move_to(v3,m2.value))
-            m3.update(move_to(v4,m3.value))
-            l1.update(s1)
-            l2.update(s2)
-            l3.update(s3)
-            utime.sleep_ms(50)
+            print("Gauge 1: {}  Free Memory: {}".format(g1.value,v2))
+            utime.sleep_ms(100)
 
 main()

@@ -7,10 +7,8 @@ Gauge Class
 import utime
 import math
 import st7789
-import vga1_8x16 as fonts
-import vga1_bold_16x16 as fontl
-import vga1_bold_16x32 as fontxl
 from lib.panel_helpers import chunked_bitmap
+import gc
 
 class gauge:
 
@@ -34,10 +32,13 @@ class gauge:
         self.center_value_y_offset = int(0.86 * box)
         self.hub = 4 # this is the centre hub
         if box > 200:
+            import vga1_bold_16x16 as fontl
             self.font = fontl
         elif box > 220:
+            import vga1_bold_16x32 as fontxl
             self.font = fontxl
         else:
+            import vga1_8x16 as fonts
             self.font = fonts
         # Display Bezel
         bm = __import__(bezel)              # import the bitmap .py file
@@ -113,4 +114,5 @@ class gauge:
         # draw the hub again to cover up the second hand
         self.display.fill_circle(self.center_x, self.center_y, self.hub, self.fg)
         self.prev_value = value # for next time round
+
 

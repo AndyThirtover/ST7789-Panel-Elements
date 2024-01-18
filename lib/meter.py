@@ -13,6 +13,7 @@ import vga1_8x8 as fonts
 import vga1_8x16 as fontl
 import vga1_bold_16x32 as fontxl
 from lib.panel_helpers import chunked_bitmap
+import gc
 
 class Meter:
 
@@ -47,7 +48,7 @@ class Meter:
         ref = bezel.replace('bitmap.','')  # reference to the object in the .py file
         print("Ref: {} from {}".format(ref,bezel))
         chunked_bitmap(display,getattr(meterBez,ref),xpos,ypos)
-
+        gc.collect()
         self.show_legend(legend)
 
     def show_legend(self, text):

@@ -45,9 +45,9 @@ def main():
     g3 = gauge_class.gauge(tft,0,120,120,bezel='bitmap.g120plain',units='Volts')
     g4 = gauge_class.gauge(tft,120,120,120,bezel='bitmap.g120plain',units='MGs')
 
-    m1 = meter.Meter(tft,230,4,80,30,legend='F Mem', bezel='bitmap.MeterBezelSimple', max=8000)
-    m2 = meter.Meter(tft,230,40,80,30,legend='Jobs', bezel='bitmap.MeterBezelSimple')
-    m3 = meter.Meter(tft,230,200,80,30,legend='Doings', bezel='bitmap.MeterBezelSimple',lc=st7789.GREEN, fg=st7789.BLUE)
+    m1 = meter.Meter(tft,240,4,80,30,legend='F Mem', bezel='bitmap.m80', max=8000)
+    m2 = meter.Meter(tft,240,40,80,30,legend='Jobs', bezel='bitmap.m80')
+    m3 = meter.Meter(tft,240,200,80,30,legend='Doings', bezel='bitmap.m80',lc=st7789.GREEN, fg=st7789.BLUE)
     l1 = ScreenLED.LED(tft,260,80,30, legend='Test', lc=st7789.GREEN)
     l2 = ScreenLED.LED(tft,260,110,30, legend='Alarm')
     l3 = ScreenLED.LED(tft,260,140,30, legend='Russes', lc=st7789.BLUE)

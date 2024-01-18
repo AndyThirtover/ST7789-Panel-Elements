@@ -120,3 +120,14 @@ In testing it was found that this variant of the ESP32  would run out of memory 
     python3 ../../st7789_mpy/utils/imgtobitmap.py g240gradient.BMP 3 > ../bitmap/g240gradient.py
 
 This of course means that gradients do not display as smooth.
+
+
+## Test files
+
+You'll see a series of test files in the form:
+    test_<resolution>_<other_stuff>
+
+![320 4 gauge example](doc_img/320x240Example.png)
+
+Hopefully each will have a free memory display - which I note drops to 0 and then resets, happily it seems that there is plenty of available memory.
+    
